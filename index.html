@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title> layout </title>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet">
+
+	<style type="text/css">
+		* {
+	      box-sizing: border-box;
+	    }
+
+	    html {
+	      min-height: 100vh;
+	      cursor: url("u-tomato.png"), auto;
+	    }
+
+	    body {
+	      margin: 0;
+	    }
+
+	    .title {
+	      font-family: 'Krona One', sans-serif;
+	      color: #FF3B01;
+	      text-align: left;
+	      margin-top: 20px;
+	      margin-left: 55px;
+	      margin-bottom: 60px;
+	      font-size: 5em;
+	    }
+
+	    .game-container {
+	    	display: flex;
+	    	justify-content: center;
+	    }
+
+	    .game-info-container {
+	      display: grid;
+	      grid-template-columns: repeat(1, auto);
+	      grid-gap: 10px;
+	      margin: 10px;
+	      margin-right: 20px;
+	      margin-left: 0px;
+	      justify-content: center;
+	      perspective: 500px;
+	    }
+
+	    .game-info {
+          color: #FF3B01;
+          font-size: 1.2em;
+        }
+
+	    .game-card-container {
+	      display: grid;
+	      grid-template-columns: repeat(10, auto);
+	      grid-gap: 10px;
+	      grid-column-gap: 5px;
+	      margin: 10px;
+	      margin-right: 0px;
+	      justify-content: center;
+	      perspective: 500px;
+	    }
+
+	    .card {
+	      content: url("card-back-31.svg");
+	      position: relative;
+	      height: 173px;
+	      width: 123px;
+	    }
+
+	    .infocard {
+	      content: url("infocard-32.svg");
+	      position: relative;
+	      height: 173px;
+	      width: 123px;
+	    }
+
+	    .card.visible .card-back {
+	      transform: rotateY(-180deg);
+	    }
+
+	    .card.visible .card-front {
+	      transform: rotateY(0)
+	    }
+
+
+	    .card-back {
+	      background-color: black;
+	      border-color: #FF6D00;
+	    }
+
+	    .card-front {
+	      background-color: #FFBB89;
+	      border-color: #333;
+	      transform: rotateY(180deg);
+	    }
+
+
+	    .card-back:hover .spider {
+	      transform: translateY(0)
+	    }
+
+
+	</style>
+</head>
+<body>
+	<h1 class="title">Card Matching Game</h1>
+
+	<div class="game-container">
+    
+	  	<div class="game-info-container">
+		    <div class="infocard game-info">
+		    Time <span id="time-remaining" class="info-text">100</span>
+		    </div>
+		    <div class="infocard game-info" class="info-text">
+		    Flips <span id="flips">0</span>
+		    </div>
+		    <div class="infocard game-info" class="info-text">
+		    Score <span id="flips">0</span>
+		    </div>
+		</div>
+
+		<div class="game-card-container">
+		    <div class="card">
+		    	<div class="card-back card-face">
+		    		<img class="spider" src="card-back-31.svg">
+		    	</div>
+		    	<div class="card-front card-face">
+		    		<img class="card-value" src="u-apple-16.svg">
+		    	</div>
+		    </div>
+		    <div class="card">
+		    	<div class="card-back card-face">
+		    		<img class="spider" src="card-back-31.svg">
+		    	</div>
+		    	<div class="card-front card-face">
+		    		<img class="card-value" src="p-apple-01.svg">
+		    	</div>
+		    </div>
+		    <div class="card">
+		    	<div class="card-back card-face">
+		    		<img class="spider" src="card-back-31.svg">
+		    	</div>
+		    	<div class="card-front card-face">
+		    		<img class="card-value" src="u-carrot-17.svg">
+		    	</div>
+		    </div>
+		    <div class="card">
+		    	<div class="card-back card-face">
+		    		<img class="spider" src="card-back-31.svg">
+		    	</div>
+		    	<div class="card-front card-face">
+		    		<img class="card-value" src="p-carrot-02.svg">
+		    	</div>
+		    </div>
+		    <div class="card">
+		    	<div class="card-back card-face">
+		    		<img class="spider" src="card-back-31.svg">
+		    	</div>
+		    	<div class="card-front card-face">
+		    		<img class="card-value" src="u-strawberry-18.svg">
+		    	</div>
+		    </div>
+		    <div class="card">
+		    	<div class="card-back card-face">
+		    		<img class="spider" src="card-back-31.svg">
+		    	</div>
+		    	<div class="card-front card-face">
+		    		<img class="card-value" src="p-strawberry-03.svg">
+		    	</div>
+		    </div>
+		    <div class="card">
+		    	<div class="card-back card-face">
+		    		<img class="spider" src="card-back-31.svg">
+		    	</div>
+		    	<div class="card-front card-face">
+		    		<img class="card-value" src="u-orange-19.svg">
+		    	</div>
+		    </div>
+		    <div class="card">
+		    	<div class="card-back card-face">
+		    		<img class="spider" src="card-back-31.svg">
+		    	</div>
+		    	<div class="card-front card-face">
+		    		<img class="card-value" src="p-orange-04.svg">
+		    	</div>
+		    </div>
+		    <div class="card">
+		    	<div class="card-back card-face">
+		    		<img class="spider" src="card-back-31.svg">
+		    	</div>
+		    	<div class="card-front card-face">
+		    		<img class="card-value" src="u-pepper-20.svg">
+		    	</div>
+		    </div>
+		    <div class="card">
+		    	<div class="card-back card-face">
+		    		<img class="spider" src="card-back-31.svg">
+		    	</div>
+		    	<div class="card-front card-face">
+		    		<img class="card-value" src="p-pepper-05.svg">
+		    	</div>
+		    </div>
+		    <div class="card"></div>
+		    <div class="card"></div>
+		    <div class="card"></div>
+		    <div class="card"></div>
+		    <div class="card"></div>
+		    <div class="card"></div>
+		    <div class="card"></div>
+		    <div class="card"></div>
+		    <div class="card"></div>
+		    <div class="card"></div>
+		    <div class="card"></div>
+		    <div class="card"></div>
+		    <div class="card"></div>
+		    <div class="card"></div>
+		    <div class="card"></div>
+		    <div class="card"></div>
+		    <div class="card"></div>
+		    <div class="card"></div>
+		    <div class="card"></div>
+		    <div class="card"></div>
+		</div>
+	</div>
+</body>
+</html>
